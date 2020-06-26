@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite-scroll</title>
+</head>
+<body>
+  <div class="container">
+    <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    >
+<div class="row pt-5">
+  <div class="col-md-12 p-2" *ngFor="let post of allpost">
+    <!-- single card -->
+    <div class="card shadow">
+      <div class="card-body text-center">
+<h5 class="card-title text-center">{{post.name}} {{post.id}}</h5>
+<p class="card-text text-center" style="font-size: 90px;">CARD No. - {{post.id}}</p>
+<a href="a" class="btn btn-primary text-center">A button with no use. ({{post.id}})</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- spinner-->
+<div class="row pb-5">
+<div class="col-md-12 p-5">
+  <ngx-spinner
+  bdOpacity = 0.9
+  bdColor = ""
+  size = "default"
+  color = "#581f87"
+  type = "ball-pulse-sync"
+  [fullScreen] = "false"
+  >
+</ngx-spinner>
+</div>
+</div>
+</div>
+</body>
+</html>
